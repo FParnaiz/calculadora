@@ -11,7 +11,7 @@
         android:id="@+id/ventana"
         android:layout_width="match_parent"
         android:layout_height="155dp"
-        android:padding="30"
+        android:padding="30dp"
         android:gravity="bottom|right"
         android:text="0"
         android:textSize="60sp"
@@ -90,8 +90,7 @@
             style="@style/botones"
             android:layout_rowSpan="3"
             android:layout_gravity="fill"
-            android:background="@drawable/basic_button"
-            android:text="+" />
+                        android:text="+" />
 
         <Button
             style="@style/botones"

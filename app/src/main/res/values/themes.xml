@@ -8,13 +8,14 @@
     <style name="Theme.Calculadora" parent="Base.Theme.Calculadora" />
     <style name="botones" parent="Widget.Material3.Button">
         <!-- Set a drawable as the background -->
-        <item name="android:background">@drawable/basic_button</item>
+        <item name="android:background">@drawable/selector</item>
         <item name="backgroundTint">@null</item>
         <!-- Customize other properties as needed -->
         <item name="android:textColor">#FFFFFF</item> <!-- Text color -->
         <item name="android:textSize">20dp</item> <!-- Text size -->
         <item name="android:padding">5dp</item>
         <item name="android:layout_margin">2dp</item><!-- Padding -->"
+
     </style>
 
 
