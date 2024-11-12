@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/ventana"
+        android:layout_width="match_parent"
+        android:layout_height="155dp"
+        android:padding="30"
+        android:gravity="bottom|right"
+        android:text="0"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027">
+
+    </TextView>
+
+    <GridLayout
+        android:id="@+id/grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.695">
+
+        <Button
+            style="@style/botones"
+            android:layout_column="3"
+            android:text="/" />
+
+        <Button
+            style="@style/botones"
+            android:text="1" />
+
+        <Button
+            style="@style/botones"
+            android:text="2" />
+
+        <Button
+            style="@style/botones"
+            android:text="3" />
+
+        <Button
+            style="@style/botones"
+            android:text="*" />
+
+        <Button
+            style="@style/botones"
+            android:text="4" />
+
+        <Button
+            style="@style/botones"
+            android:text="5" />
+
+        <Button
+            style="@style/botones"
+            android:text="6" />
+
+        <Button
+            style="@style/botones"
+            android:text="-" />
+
+        <Button
+            style="@style/botones"
+            android:text="7" />
+
+        <Button
+            style="@style/botones"
+            android:text="8" />
+
+        <Button
+            style="@style/botones"
+            android:text="9" />
+
+        <Button
+            style="@style/botones"
+            android:layout_rowSpan="3"
+            android:layout_gravity="fill"
+            android:background="@drawable/basic_button"
+            android:text="+" />
+
+        <Button
+            style="@style/botones"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            android:text="0" />
+
+        <Button
+            style="@style/botones"
+            android:text="00" />
+
+        <Button
+            style="@style/botones"
+            android:layout_columnSpan="3"
+            android:layout_gravity="fill"
+            android:text="=" />
+
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,16 @@
+start
+num1=0
+num2=null
+symbol=null
+print num1
+press button num-> if num1 = 0; num1=botton;
+				print num1
+		else num1 concatenar boton
+			print num1
+press symbol->	if symbol null -> symbol=symbol button
+				num2=num1
+				num1=0
+		else-> num1=num1 symbol num2
+			symbol =symbol button
+			
+
