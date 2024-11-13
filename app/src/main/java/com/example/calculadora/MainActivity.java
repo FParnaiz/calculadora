@@ -1,6 +1,7 @@
 package com.example.calculadora;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     TextView pantalla;
     Boolean calc_in_progess = false;
     String operando;
+    Float memoria= (float) 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,43 +37,86 @@ public class MainActivity extends AppCompatActivity {
         Button  boton = (Button) v;
         buffer.append(boton.getText().toString());
         pantalla.setText(buffer.toString());
+
     }
     public void boton_operacion(View v){
         Button  boton = (Button) v;
-
         if(!calc_in_progess){
-            calc_in_progess=true;
-            operando = boton.getText().toString();
-            total = Float.parseFloat(buffer.toString());
-            buffer.delete(0,buffer.length());
+            if (buffer.length() > 0) {
+                calc_in_progess=true;
+                operando = boton.getText().toString();
+                total = Float.parseFloat(buffer.toString());
+                buffer.delete(0,buffer.length());
+            }
         }
-        else {
+        else{
+            Log.d("operacion", operando);
+             String next_operando= boton.getText().toString();
             if (buffer.length() > 0) {
                 valor = Float.parseFloat(buffer.toString());
                 switch (operando) {
                     case "+":
                         total = total + valor;
+                        Log.d("operacion", operando+" "+total);
+
                         break;
                     case "-":
                         total = total - valor;
+                        Log.d("operacion", operando+" "+total);
+
                         break;
                     case "*":
                         total = total * valor;
+                        Log.d("operacion", operando+" "+total);
+
                         break;
                     case "/":
                         total = total / valor;
-                        break;
-                    case "=":
-                        calc_in_progess = false;
+                        Log.d("operacion", operando+" "+total);
                         break;
 
                 }
-                operando = boton.getText().toString();
-                buffer.delete(0, buffer.length());
-                pantalla.setText(total.toString());
+
             }
+            if(next_operando == "="){
+                Log.d("operacion", "igualdad");
+                calc_in_progess=false;
+            }else{
+                Log.d("operacion", "seguimos");
+                operando = next_operando;
+            }
+            buffer.delete(0, buffer.length());
+            pantalla.setText(total.toString());
         }
 
 
     }
+
+    public void reset(View v){
+        buffer.delete(0, buffer.length());
+        pantalla.setText("0");
+        calc_in_progess=false;
+        total= (float) 0;
+        valor= (float) 0;
+        operando="";
+    }
+    public void borrar(View v){
+        if(buffer.length()>0){
+            buffer.deleteCharAt(buffer.length()-1);
+            pantalla.setText(buffer.toString());
+        }
+    }
+    public void sumar_memoria(View v){
+        memoria = memoria + Float.parseFloat(pantalla.getText().toString());
+    }
+    public void restar_memoria(View v){
+        memoria = memoria - Float.parseFloat(pantalla.getText().toString());
+    }
+    public void borrar_memoria(View v){
+        memoria= (float) 0;
+    }
+    public void leer_memoria(View v){
+        pantalla.setText(memoria.toString());
+    }
+
 }

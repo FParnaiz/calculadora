@@ -36,10 +36,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.695">
-
         <Button
             style="@style/botones"
-            android:layout_column="3"
+            android:text="Clear"
+            android:id="@+id/reset"
+            android:onClick="reset"/>
+        <Button
+            style="@style/botones"
+            android:layout_columnSpan="2"
+            android:text="Del"
+            android:id="@+id/borrar"
+            android:onClick="borrar"/>
+        <Button
+            style="@style/botones_operadores"
+
             android:text="/"
             android:id="@+id/dividir"
             android:onClick="boton_operacion"/>
@@ -63,7 +73,7 @@
             android:onClick="boton_num"/>
 
         <Button
-            style="@style/botones"
+            style="@style/botones_operadores"
             android:text="*"
             android:id="@+id/multiplicar"
             android:onClick="boton_operacion"/>
@@ -87,7 +97,7 @@
             android:onClick="boton_num"/>
 
         <Button
-            style="@style/botones"
+            style="@style/botones_operadores"
             android:text="-"
             android:id="@+id/restar"
             android:onClick="boton_operacion"/>
@@ -111,7 +121,7 @@
             android:onClick="boton_num"/>
 
         <Button
-            style="@style/botones"
+            style="@style/botones_operadores"
             android:layout_rowSpan="3"
             android:layout_gravity="fill"
             android:text="+"
@@ -133,7 +143,7 @@
             android:onClick="boton_num"/>
 
         <Button
-            style="@style/botones"
+            style="@style/botones_operadores"
             android:layout_columnSpan="3"
             android:layout_gravity="fill"
             android:text="="
@@ -142,6 +152,45 @@
 
 
     </GridLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3">
+
+        <Button
+            style="@style/botones"
+            android:text="MC"
+            android:id="@+id/mc"
+            android:onClick="borrar_memoria">
+        </Button>
+        <Button
+            style="@style/botones"
+            android:text="M+"
+            android:id="@+id/m_mas"
+            android:onClick="sumar_memoria">
+        </Button>
+        <Button
+            style="@style/botones"
+            android:text="M-"
+            android:id="@+id/m_menos"
+            android:onClick="restar_memoria">
+        </Button>
+        <Button
+            style="@style/botones"
+            android:text="Mr"
+            android:id="@+id/mr"
+            android:onClick="leer_memoria">
+        </Button>
+    </GridLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

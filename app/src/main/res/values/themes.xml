@@ -17,6 +17,17 @@
         <item name="android:layout_margin">2dp</item><!-- Padding -->"
 
     </style>
+    <style name="botones_operadores" parent="Widget.Material3.Button">
+        <!-- Set a drawable as the background -->
+        <item name="android:background">@drawable/button_selector</item>
+        <item name="backgroundTint">@null</item>
+        <!-- Customize other properties as needed -->
+        <item name="android:textColor">#FFFFFF</item> <!-- Text color -->
+        <item name="android:textSize">20dp</item> <!-- Text size -->
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">2dp</item><!-- Padding -->"
+
+    </style>
 
 
 
