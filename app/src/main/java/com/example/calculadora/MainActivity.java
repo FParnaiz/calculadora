@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     String operando;
     Float memoria= (float) 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,12 +71,10 @@ public class MainActivity extends AppCompatActivity {
                     case "+":
                         total = total + valor;
                         Log.d("operacion", operando+" "+total);
-
                         break;
                     case "-":
                         total = total - valor;
                         Log.d("operacion", operando+" "+total);
-
                         break;
                     case "*":
                         total = total * valor;
