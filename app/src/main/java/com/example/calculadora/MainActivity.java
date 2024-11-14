@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     Float total= (float) 0;
-    Float valor;
+    Float valor= (float) 0;
     StringBuffer buffer = new StringBuffer();
     TextView pantalla;
     Boolean calc_in_progess = false;
@@ -32,7 +32,19 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         pantalla = findViewById(R.id.pantalla);
+        if (savedInstanceState != null) {
+            total = savedInstanceState.getFloat("total");
+            buffer.append(savedInstanceState.getString("buffer"));
+            String pantalla_text = savedInstanceState.getString("pantalla"); pantalla.setText(savedInstanceState.getString("pantalla"));
+            operando = savedInstanceState.getString("operando");
+            memoria = savedInstanceState.getFloat("memoria");
+            calc_in_progess=savedInstanceState.getBoolean("calc_in_progess");
+
+            pantalla.setText(pantalla_text);
+
+        }
     }
+
     public void boton_num(View v){
         Button  boton = (Button) v;
         buffer.append(boton.getText().toString());
@@ -117,6 +129,23 @@ public class MainActivity extends AppCompatActivity {
     }
     public void leer_memoria(View v){
         pantalla.setText(memoria.toString());
+    }
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putFloat("total",total);
+
+        savedInstanceState.putString("buffer",buffer.toString());
+        savedInstanceState.putString("pantalla",pantalla.getText().toString());
+        savedInstanceState.putString("operando",operando);
+        savedInstanceState.putFloat("memoria",memoria);
+        savedInstanceState.putBoolean("calc_in_progess",calc_in_progess);
+        Log.d("SavedInstanceState", "total = " + total);
+        Log.d("SavedInstanceState", "buffer = " + buffer.toString());
+        Log.d("SavedInstanceState", "pantalla = " + pantalla.getText().toString());
+        Log.d("SavedInstanceState", "operando = " + operando);
+        Log.d("SavedInstanceState", "memoria = " + memoria);
+        Log.d("SavedInstanceState", "calc_in_progess = " + calc_in_progess);
+
     }
 
 }
